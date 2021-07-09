@@ -33,10 +33,20 @@ public class AddressbookMain {
 	 * @param phone
 	 * @param email
 	 * @return
+	 * @throws CustomException 
 	 */
 	public int createContact(String firstName , String lastName , String address , String city ,String state,
-			String zip ,String phone , String email) {
-		Contact contact = new Contact(firstName,lastName,address,city,state,zip,phone,email);
+		String zip ,String phone , String email) throws CustomException {
+		
+		Contact contact = new Contact();
+		contact.setFirstName(firstName);
+		contact.setLastName(lastName);
+		contact.setAddress(address);
+		contact.setCity(city);
+		contact.setState(state);
+		contact.setZip(zip);
+		contact.setPhone(phone);
+		contact.setEmail(email);
 		addressbook.add(contact);
 		return addressbook.size();
 	}
